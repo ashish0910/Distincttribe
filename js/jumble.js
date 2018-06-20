@@ -63,7 +63,7 @@ class TextScramble {
     }
   }
   const phrases = [
-    'Being Distinct is Better' , 'than Being Better'
+    ' Distinct '
   ]
   const el = document.querySelector('.text')
   const fx = new TextScramble(el)
