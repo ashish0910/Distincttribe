@@ -6,12 +6,12 @@ body {
 }
 
 a {
-  color:#F4C2C2;
+  color:#00C6EF;
   transition: 0.5s;
 }
 
 a:hover, a:active, a:focus {
-  color: #F4C2C2;
+  color: #00C6EF;
   outline: none;
   text-decoration: none;
 }
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background:#F4C2C2;
+  background:#00C6EF;
   color: #fff;
 }
 
@@ -154,8 +154,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started {
-  background:#F4C2C2;
-  border: 2px solid#F4C2C2;
+  background:#00C6EF;
+  border: 2px solid#00C6EF;
   color: #fff;
 }
 
@@ -171,8 +171,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-services:hover {
-  background:#F4C2C2;
-  border: 2px solid#F4C2C2;
+  background:#00C6EF;
+  border: 2px solid#00C6EF;
 }
 
 /*--------------------------------------------------------------
@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu li:hover > a, .nav-menu .menu-active > a {
-  color:#F4C2C2;
+  color:#00C6EF;
 }
 
 .nav-menu ul {
@@ -417,11 +417,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
-  color:#F4C2C2;
+  color:#00C6EF;
 }
 
 #mobile-nav ul .menu-item-active {
-  color:#F4C2C2;
+  color:#00C6EF;
 }
 
 #mobile-body-overly {
@@ -469,7 +469,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .section-title-divider {
   width: 50px;
   height: 3px;
-  background:#F4C2C2;
+  background:#00C6EF;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -532,11 +532,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #services .service-icon {
   float: left;
-  background:#F4C2C2;
+  background:#00C6EF;
   padding: 16px;
   border-radius: 50%;
   transition: 0.5s;
-  border: 1px solid#F4C2C2;
+  border: 1px solid#00C6EF;
 }
 
 #services .service-icon i {
@@ -549,7 +549,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .service-item:hover .service-icon i {
-  color:#F4C2C2;
+  color:#00C6EF;
 }
 
 #services .service-title {
@@ -607,8 +607,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #subscribe .subscribe-btn:hover {
-  background:#F4C2C2;
-  border: 2px solid#F4C2C2;
+  background:#00C6EF;
+  border: 2px solid#00C6EF;
 }
 
 /* Portfolio Section
@@ -694,7 +694,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #testimonials .profile h4 {
   font-weight: 700;
-  color:#F4C2C2;
+  color:#00C6EF;
   margin-bottom: 5px;
 }
 
@@ -769,7 +769,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #team .member .social a:hover {
-  color:#F4C2C2;
+  color:#00C6EF;
 }
 
 #team .member .social i {
@@ -779,45 +779,45 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Contact button */
 .label-container{
-  position:fixed;
-  bottom:48px;
-  right:105px;
-  display:table;
-  visibility: hidden;
+	position:fixed;
+	bottom:48px;
+	right:105px;
+	display:table;
+	visibility: hidden;
 }
 
 .label-text{
-  color:#FFF;
-  background:rgba(51,51,51,0.5);
-  display:table-cell;
-  vertical-align:middle;
-  padding:10px;
-  border-radius:3px;
+	color:#FFF;
+	background:rgba(51,51,51,0.5);
+	display:table-cell;
+	vertical-align:middle;
+	padding:10px;
+	border-radius:3px;
 }
 
 .label-arrow{
-  display:table-cell;
-  vertical-align:middle;
-  color:#333;
-  opacity:0.5;
+	display:table-cell;
+	vertical-align:middle;
+	color:#333;
+	opacity:0.5;
 }
 
 .float{
-  position:fixed;
-  width:60px;
-  height:60px;
-  bottom:40px;
-  right:40px;
-  background-color:#03C4EB;
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  box-shadow: 2px 2px 3px #999;
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#03C4EB;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
 }
 
 .my-float{
-  font-size:24px;
-  margin-top:18px;
+	font-size:24px;
+	margin-top:18px;
 }
 
 a.float + div.label-container {
@@ -843,7 +843,7 @@ a.float:hover + div.label-container{
 
 #contact .info i {
   font-size: 32px;
-  color:#F4C2C2;
+  color:#00C6EF;
   float: left;
 }
 
@@ -853,8 +853,8 @@ a.float:hover + div.label-container{
 }
 
 #contact .form #sendmessage {
-  color:#F4C2C2;
-  border: 1px solid#F4C2C2;
+  color:#00C6EF;
+  border: 1px solid#00C6EF;
   display: none;
   text-align: center;
   padding: 15px;
@@ -890,7 +890,7 @@ a.float:hover + div.label-container{
 }
 
 #contact .form button[type="submit"] {
-  background:#F4C2C2;
+  background:#00C6EF;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -898,7 +898,7 @@ a.float:hover + div.label-container{
 }
 
 #contact .form button[type="submit"]:hover {
-  background: #F4C2C2;
+  background: #00C6EF;
 }
 
 /*--------------------------------------------------------------
@@ -923,4 +923,6 @@ a.float:hover + div.label-container{
 
 
 
-/* Color babypink = #F4C2C2 */
+/* Color babypink = #00C6EF */
+/* collour green = #00C6EF   */
+/* blue #00C6EF */
