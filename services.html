@@ -37,7 +37,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/social.css">
 
 </head>
 
@@ -123,12 +123,12 @@
             <div class="modal-content">
                <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">Login with</h4>
+                      <h4 class="modal-title">Login</h4>
                   </div>
                   <div class="modal-body">  
                       <div class="box">
                            <div class="content">
-                              <div class="social">
+                              <!-- <div class="social">
                                   <a class="circle github" href="/auth/github">
                                       <i class="fa fa-github fa-fw"></i>
                                   </a>
@@ -143,7 +143,7 @@
                                   <div class="line l"></div>
                                     <span>or</span>
                                   <div class="line r"></div>
-                              </div>
+                              </div> -->
                               <div class="error"></div>
                               <div class="form loginBox">
                                   <form method="post" action="/login" accept-charset="UTF-8">
@@ -160,10 +160,33 @@
                               <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
                               <input id="email" class="form-control" type="text" placeholder="Email" name="email">
                               <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                              <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                              <input class="btn btn-default btn-register" type="submit" value="Join as Brand" name="commit">
-                              <br>
-                              <input class="btn btn-default btn-register" type="submit" value="Join as Creator" name="commit">
+                              <input id="brandname" class="form-control" type="text" placeholder="Brand Name" name="brandname">
+                              <input id="website" class="form-control" type="text" placeholder="Brand Website" name="website">
+                              <input id="name" class="form-control" type="text" placeholder="Your Name" name="name">
+                              <!-- <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation"> -->
+                              <input class="btn btn-default btn-register" type="submit" value="Join as Brand" name="commit"><div class="division">
+                                <div class="line l"></div>
+                                  <span>or</span>
+                                <div class="line r"></div>
+                            </div>
+                            <!-- <div class="edit-soc">
+                            <i class="fa fa-instagram"></i>
+                            <span class="btn-msg">Signup with Instagram</span>
+                            </div> -->
+                            <div style="margin-top:-15px">
+                             <div style="margin-bottom:5px;font-size:2rem;">
+                              <B>Join as Creator</B>
+                             </div>
+                              <a class="btn btn-block btn-social btn-instagram">
+                                <span class="fa fa-instagram"></span> Sign in with Instagram
+                              </a>
+                            </div>
+                            <div style="margin-top:5px">
+                              <a class="btn btn-block btn-social btn-google">
+                                <span class="fa fa-google"></span> Sign in with Google
+                              </a>
+                            </div>
+                              <!-- <input class="btn btn-default btn-register" type="submit" value="Join as Creator" name="commit" style="margin-top:5px"> -->
                               </form>
                               </div>
                           </div>
