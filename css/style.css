@@ -6,12 +6,12 @@ body {
 }
 
 a {
-  color:#00C6EF;
+  color:#22ADFE;
   transition: 0.5s;
 }
 
 a:hover, a:active, a:focus {
-  color: #00C6EF;
+  color: #22ADFE;
   outline: none;
   text-decoration: none;
 }
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background:#00C6EF;
+  background:#22ADFE;
   color: #fff;
 }
 
@@ -154,8 +154,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started {
-  background:#00C6EF;
-  border: 2px solid#00C6EF;
+  background:#22ADFE;
+  border: 2px solid#22ADFE;
   color: #fff;
 }
 
@@ -171,8 +171,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-services:hover {
-  background:#00C6EF;
-  border: 2px solid#00C6EF;
+  background:#22ADFE;
+  border: 2px solid#22ADFE;
 }
 
 /*--------------------------------------------------------------
@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu li:hover > a, .nav-menu .menu-active > a {
-  color:#00C6EF;
+  color:#22ADFE;
 }
 
 .nav-menu ul {
@@ -417,11 +417,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
-  color:#00C6EF;
+  color:#22ADFE;
 }
 
 #mobile-nav ul .menu-item-active {
-  color:#00C6EF;
+  color:#22ADFE;
 }
 
 #mobile-body-overly {
@@ -469,7 +469,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .section-title-divider {
   width: 50px;
   height: 3px;
-  background:#00C6EF;
+  background:#22ADFE;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -532,11 +532,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #services .service-icon {
   float: left;
-  background:#00C6EF;
+  background:#22ADFE;
   padding: 16px;
   border-radius: 50%;
   transition: 0.5s;
-  border: 1px solid#00C6EF;
+  border: 1px solid#22ADFE;
 }
 
 #services .service-icon i {
@@ -549,7 +549,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .service-item:hover .service-icon i {
-  color:#00C6EF;
+  color:#22ADFE;
 }
 
 #services .service-title {
@@ -607,8 +607,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #subscribe .subscribe-btn:hover {
-  background:#00C6EF;
-  border: 2px solid#00C6EF;
+  background:#22ADFE;
+  border: 2px solid#22ADFE;
 }
 
 /* Portfolio Section
@@ -694,7 +694,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #testimonials .profile h4 {
   font-weight: 700;
-  color:#00C6EF;
+  color:#22ADFE;
   margin-bottom: 5px;
 }
 
@@ -769,7 +769,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #team .member .social a:hover {
-  color:#00C6EF;
+  color:#22ADFE;
 }
 
 #team .member .social i {
@@ -808,7 +808,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 	height:60px;
 	bottom:40px;
 	right:40px;
-	background-color:#03C4EB;
+	background-color:#22AFDE;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
@@ -843,7 +843,7 @@ a.float:hover + div.label-container{
 
 #contact .info i {
   font-size: 32px;
-  color:#00C6EF;
+  color:#22ADFE;
   float: left;
 }
 
@@ -853,8 +853,8 @@ a.float:hover + div.label-container{
 }
 
 #contact .form #sendmessage {
-  color:#00C6EF;
-  border: 1px solid#00C6EF;
+  color:#22ADFE;
+  border: 1px solid#22ADFE;
   display: none;
   text-align: center;
   padding: 15px;
@@ -890,7 +890,7 @@ a.float:hover + div.label-container{
 }
 
 #contact .form button[type="submit"] {
-  background:#00C6EF;
+  background:#22ADFE;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -898,7 +898,7 @@ a.float:hover + div.label-container{
 }
 
 #contact .form button[type="submit"]:hover {
-  background: #00C6EF;
+  background: #22ADFE;
 }
 
 /*--------------------------------------------------------------
@@ -1143,6 +1143,6 @@ a.float:hover + div.label-container{
 }
 
 
-/* Color babypink = #00C6EF */
-/* collour green = #00C6EF   */
+
 /* blue #00C6EF */
+/* tutyy #22ADFE */
