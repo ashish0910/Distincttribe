@@ -1070,8 +1070,8 @@ a.float:hover + div.label-container{
     width: 100%;
 }
 .login .btn-login, .registerBox .btn-register{
-    background-color: #00BBFF;
-    border-color: #00BBFF;
+    background-color: #22ADFE;
+    border-color: #22ADFE;
     border-width: 0;
     color: #FFFFFF;
     display: block;
@@ -1117,7 +1117,7 @@ a.float:hover + div.label-container{
 }
 
 .big-login, .big-register{
-    background-color: #00bbff;
+    background-color: #22ADFE;
     color: #FFFFFF;
     border-radius: 7px;
     border-width: 2px;
@@ -1134,8 +1134,8 @@ a.float:hover + div.label-container{
 }
 .big-register{
     background-color: rgba(0,0,0,.0);
-    color: #00bbff;
-    border-color: #00bbff;
+    color: #22ADFE;
+    border-color: #22ADFE;
 }
 .big-register:hover{
     border-color: #00A4E4;
