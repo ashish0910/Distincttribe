@@ -1,11 +1,42 @@
+<?php
+require "instagramAPI.php";
+require_once('db.php');
+
+?>
+<?php
+    session_start();
+    require_once('db.php');
+    if(isset($_POST['email'])){
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        $query = "SELECT * FROM `brand` WHERE `email` = '$email'";
+        $result = mysqli_query($connection,$query);
+        $row = mysqli_fetch_array($result);
+        $res=password_verify($password, $row["password"]);
+        if($row["email"]==$email && $res)
+        {
+            $_SESSION['log']=1;
+            $_SESSION['email']=$email;
+            $_SESSION['name']=$row['name'];
+            $_SESSION['website']=$row['brandwebsite'];
+            $_SESSION['brandname']=$row['brandname'];
+            header("Location: final.php");
+        }
+        else{
+            $_SESSION['error_login'] = "ok";
+        }
+        
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+  
   <meta charset="utf-8">
   <title>Distinct tribe</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
+  <meta content="advertising" name="online">
   <meta content="" name="description">
 
   <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
@@ -23,7 +54,7 @@
   <meta name="twitter:image" content="">
 
   <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
-  <link href="favicon.ico" rel="shortcut icon">
+  <link href="img/Favicon.png" type="image/png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
@@ -49,19 +80,20 @@
 
       <div id="logo" class="pull-left">
         <a href="#hero"><img src="img/navlogo2.png" alt="" title="" /></img></a>
-        <a href="#hero"><img src="img/navlogo.png" style="width:200px;height:200px;margin-left:-30px;"  alt="" title="" /></img></a>
+        <a href="#hero"><img src="img/navlogo.png" style="width:150px;height:200px;margin-left:-30px;"  alt="" title="" /></img></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Header 1</a></h1>-->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
+          <li class="menu-active"><a href="index.php#hero">Home</a></li>
+          <li><a href="index.php#about">About</a></li>
+          <li><a href="index.php#services">Services</a></li>
           <!-- <li><a href="#portfolio">Social</a></li> -->
           <!-- <li><a href="#testimonials">Online PR</a></li> -->
-          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.php#team">Team</a></li>
+          <li><a href="blog.php">Blogs</a></li>
           <!-- <li class="menu-has-children"><a href="">Blogging</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -79,7 +111,7 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li> -->
-          <li><a href="index.html#contact">Contact Us</a></li>
+          <li><a href="index.php#contact">Contact Us</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -87,7 +119,7 @@
   </header>
   <!-- #header -->
 <body>
-  <div id="#influencer">
+  <div id="influencer">
     <div style=" background-color:grey !important;">
         <section id="about">
             <div class="container about-container wow fadeInUp">
@@ -115,127 +147,147 @@
     </div>
     </div>
 
-  <div id="#personal">
-    <div style="background-color:#F7F7F7;">
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="container">
-        <div class="col-xs-12">
-          <h3><b>Personal Branding</b></h3>
-          <p>
-            It is crucial that your audience perceives you as relationship builder, a trustworthy name and a problem solver instead of just another talent among so many others. The combination of our strategies and your actions leads to effective network building which in turn increases the credibility attached to your name. We manage your relations with the public, control any damage and oversee any threat to your name. The impression you create not through sales but through brand building, bringing about a change in the community and through leadership is long lasting. 
-          </p>
-        </div>
-      </div> 
-    </div>
-  </div>
-  <br>
-  <br>
-    <!-- Login Modal Start -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4" id="#login">
-                 <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a>
-                 <a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></div>
-            <div class="col-sm-4"></div>
-        </div>
-     <div class="modal fade login" id="loginModal">
-          <div class="modal-dialog login animated">
-              <div class="modal-content">
-                 <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Login</h4>
-                    </div>
-                    <div class="modal-body">  
-                        <div class="box">
-                             <div class="content">
-                                <!-- <div class="social">
-                                    <a class="circle github" href="/auth/github">
-                                        <i class="fa fa-github fa-fw"></i>
-                                    </a>
-                                    <a id="google_login" class="circle google" href="/auth/google_oauth2">
-                                        <i class="fa fa-google-plus fa-fw"></i>
-                                    </a>
-                                    <a id="facebook_login" class="circle facebook" href="/auth/facebook">
-                                        <i class="fa fa-facebook fa-fw"></i>
-                                    </a>
-                                </div>
-                                <div class="division">
-                                    <div class="line l"></div>
-                                      <span>or</span>
-                                    <div class="line r"></div>
-                                </div> -->
-                                <div class="error"></div>
-                                <div class="form loginBox">
-                                    <form method="post" action="/login" accept-charset="UTF-8">
-                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                    <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
-                                    </form>
-                                </div>
-                             </div>
-                        </div>
-                        <div class="box">
-                            <div class="content registerBox" style="display:none;">
-                             <div class="form">
-                                <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input id="brandname" class="form-control" type="text" placeholder="Brand Name" name="brandname">
-                                <input id="website" class="form-control" type="text" placeholder="Brand Website" name="website">
-                                <input id="name" class="form-control" type="text" placeholder="Your Name" name="name">
-                                <!-- <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation"> -->
-                                <input class="btn btn-default btn-register" type="submit" value="Join as Brand" name="commit"><div class="division">
-                                  <div class="line l"></div>
-                                    <span>or</span>
-                                  <div class="line r"></div>
-                              </div>
-                              <!-- <div class="edit-soc">
-                              <i class="fa fa-instagram"></i>
-                              <span class="btn-msg">Signup with Instagram</span>
-                              </div> -->
-                              <div style="margin-top:-15px">
-                               <div style="margin-bottom:5px;font-size:2rem;">
-                                <B>Join as Creator</B>
-                               </div>
-                                <a class="btn btn-block btn-social btn-instagram">
-                                  <span class="fa fa-instagram"></span> Sign in with Instagram
-                                </a>
-                              </div>
-                              <div style="margin-top:5px">
-                                <a class="btn btn-block btn-social btn-google">
-                                  <span class="fa fa-google"></span> Sign in with Google
-                                </a>
-                              </div>
-                                <!-- <input class="btn btn-default btn-register" type="submit" value="Join as Creator" name="commit" style="margin-top:5px"> -->
-                                </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="forgot login-footer">
-                            <span>Looking to 
-                                 <a href="javascript: showRegisterForm();">create an account</a>
-                            ?</span>
-                        </div>
-                        <div class="forgot register-footer" style="display:none">
-                             <span>Already have an account?</span>
-                             <a href="javascript: showLoginForm();">Login</a>
-                        </div>
-                    </div>        
-              </div>
+        <!-- Login Modal Start -->
+        <div class="container">
+          <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4" id="#login">
+                   <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a>
+                   <a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></div>
+              <div class="col-sm-4"></div>
           </div>
+       <div class="modal fade login" id="loginModal">
+            <div class="modal-dialog login animated">
+                <div class="modal-content">
+                   <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title">Login</h4>
+                      </div>
+                      <div class="modal-body">  
+                          <div class="box">
+                               <div class="content">
+                                  <!-- <div class="social">
+                                      <a class="circle github" href="/auth/github">
+                                          <i class="fa fa-github fa-fw"></i>
+                                      </a>
+                                      <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                          <i class="fa fa-google-plus fa-fw"></i>
+                                      </a>
+                                      <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                          <i class="fa fa-facebook fa-fw"></i>
+                                      </a>
+                                  </div>
+                                  <div class="division">
+                                      <div class="line l"></div>
+                                        <span>or</span>
+                                      <div class="line r"></div>
+                                  </div> -->
+                                  <div class="error"></div>
+                                  <div class="form loginBox">
+                                      <?php   
+                                      if(isset($_SESSION)) { if(isset($_SESSION['error_login'])) {
+                                          if($_SESSION['error_login']=="ok"){
+                                              $_SESSION['error_login']="done";
+                                              ?><div class='alert alert-danger'>Invalid Email or Password</div><?php
+                                          }
+                                      } }   ?>
+                                      <form method="post" action="" accept-charset="UTF-8">
+                                      <input id="email" class="form-control" type="email" placeholder="Email" name="email" required>
+                                      <input id="password" class="form-control" type="password" placeholder="Password" name="password" required>
+                                      <input class="btn btn-default btn-login" type="submit" value="Login" >
+                                      </form>
+                                      <div class="division">
+                                    <div class="line l"></div>                                      <span>or</span>
+                                    <div class="line r"></div>
+                                </div>
+                                <!-- <div class="edit-soc">
+                                <i class="fa fa-instagram"></i>
+                                <span class="btn-msg">Signup with Instagram</span>
+                                </div> -->
+                                <div style="margin-top:-15px">
+                                 <div style="margin-bottom:5px;font-size:2rem;">
+                                  <B>Join as Creator</B>
+                                 </div>
+                                  <a onclick="javascript: window.location = '<?php echo $Instagram->getLoginURL() ?>';" class="btn btn-block btn-social btn-instagram">
+                                    <span class="fa fa-instagram"></span> Sign in with Instagram
+                                  </a>
+                                </div>
+                                <div style="margin-top:5px">
+                                  <a class="btn btn-block btn-social btn-google">
+                                    <span class="fa fa-google"></span> Sign in with Google
+                                  </a>
+                                </div>
+                                  </div>
+                               </div>
+                          </div>
+                          <div class="box">
+                              <div class="content registerBox" style="display:none;">
+                               <div class="form">
+                                  <form method="POST" data-remote="true" action="register.php" >
+                                  <input id="email" class="form-control" type="email" placeholder="Email" name="email" required>
+                                  <input id="password" class="form-control" type="password" placeholder="Password" name="password" required>
+                                  <input id="brandname" class="form-control" type="text" placeholder="Brand Name" name="brandname" required>
+                                  <input id="website" class="form-control" type="text" placeholder="Brand Website" name="website" required>
+                                  <input id="name" class="form-control" type="text" placeholder="Your Name" name="name" required>
+                                  <!-- <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation"> -->
+                                  <input class="btn btn-default btn-register" type="submit" value="Join as Brand" name="commit">
+                                </form> 
+                                
+                                  <!-- <input class="btn btn-default btn-register" type="submit" value="Join as Creator" name="commit" style="margin-top:5px"> -->
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <div class="forgot login-footer">
+                              <span>Looking to 
+                                   <a href="javascript: showRegisterForm();">create an account</a>
+                              ?</span>
+                          </div>
+                          <div class="forgot register-footer" style="display:none">
+                               <span>Already have an account?</span>
+                               <a href="javascript: showLoginForm();">Login</a>
+                          </div>
+                      </div>        
+                </div>
+            </div>
+        </div>
       </div>
-    </div>
-    
-    <!-- Login modal end -->
+      
+      <!-- Login modal end -->
+  
+
+      <div id="personal">
+        <div style=" background-color:grey !important;">
+            <section id="about">
+                <div class="container about-container wow fadeInUp">
+                    <div class="row">
+              
+                      
+              
+                      <div class="col-md-6 about-content">
+                        <h2 class="about-title">Personal Branding</h2>
+                        <p class="about-text">
+                          It is crucial that your audience perceives you as relationship builder, a trustworthy name and a problem solver instead of just another talent among so many others. The combination of our strategies and your actions leads to effective network building which in turn increases the credibility attached to your name.
+                        </p>
+                        <p class="about-text">
+                          We manage your relations with the public, control any damage and oversee any threat to your name. The impression you create not through sales but through brand building, bringing about a change in the community and The impression you create through brand building leadership is long lasting.
+                        </p>
+                      </div>
+                      
+                      <div class="col-lg-6 about-img">
+                        <img src="img/personal2.gif" alt="">
+                      </div>
+                      
+                      
+                    </div>
+                  </div>
+            </section>
+        </div>
+        </div>
 
   
-    <div id="#digital">
+    <div id="digital">
       <div>
           <section id="about">
               <div class="container about-container wow fadeInUp">
@@ -246,7 +298,8 @@
                     <div class="col-md-6 about-content">
                       <h2 class="about-title">Digital Marketing</h2>
                       <p class="about-text">
-                        Creation and maintenance of a digital presence is very important for every single business in the new digital age. Our website building services make sure your every person that enters your website does not close without browsing it.  
+                        Creation and maintenance of a digital presence is very important for every single business in the new digital age. Our website building services make sure that any person who enters your website does not close it without browsing through it.
+  
                       </p>
                       <p class="about-text">
                         We help in improving your digital visibility and engagement through social media marketing, search engine optimization, paid advertisements and much more. We can make your identity look compelling and as attractive as you want it to be through expert advice, assistance and comprehensive campaigning. 

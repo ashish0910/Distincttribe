@@ -82,6 +82,12 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
 }
 
+.hero-offer {
+  background: url(../img/Website.jpg) !important;
+  height: 100%;
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
